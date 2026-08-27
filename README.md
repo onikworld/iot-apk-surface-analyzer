@@ -108,3 +108,25 @@ This project is intended for education, defensive research, and analysis of soft
 ## License
 
 MIT
+
+## Real Test Example
+
+The analyzer was tested on the open-source Android calculator APK:
+
+`com.vagujhelyigergely.calculatorm3_13.apk`
+
+The test successfully produced a JSON report and identified several security-relevant indicators, including:
+
+- command-execution related references such as `java/lang/Runtime` and `exec`
+- device identifier references such as `getDeviceId` and `ANDROID_ID`
+- location-related references such as `getLastKnownLocation`
+- reflection-related references such as `java/lang/reflect`
+- external-storage related references
+
+No IP endpoints were identified in this test.
+
+These findings are **indicators only** and do not by themselves prove that the application is vulnerable. Manual validation is required.
+
+A sample report from this test is included in the repository as:
+
+`sample-report.json`

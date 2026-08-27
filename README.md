@@ -22,7 +22,7 @@ This tool is a first step toward studying that problem. It does **not** prove th
 Python 3.10+ is recommended.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/iot-apk-surface-analyzer.git
+git clone https://github.com/onikworld/iot-apk-surface-analyzer.git
 cd iot-apk-surface-analyzer
 python -m venv .venv
 ```

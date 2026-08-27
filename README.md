@@ -47,7 +47,7 @@ Save a JSON report:
 python analyzer.py path/to/app.apk --json report.json
 ```
 
-## Example output
+## Example Output
 
 ```text
 == Example IoT App (com.example.iot) ==
@@ -70,45 +70,6 @@ Sensitive API indicators
   - Location: requestLocationUpdates
 ```
 
-## Current limitations
-
-This is intentionally a small research prototype.
-
-- Sensitive API detection is currently string-based.
-- Exported-component interpretation may depend on Android version and manifest behavior.
-- URLs may include benign SDK, analytics, documentation, or test endpoints.
-- Obfuscation can hide classes, methods, strings, and endpoints.
-- Findings require manual validation.
-
-## Possible next steps
-
-I plan to explore:
-
-1. direct method-reference analysis instead of only string matching
-2. permission-to-API mapping
-3. intent/deep-link extraction
-4. taint/data-flow analysis for sensitive sources and sinks
-5. comparison of IoT pairing and authentication workflows
-6. modeling user-triggered security-sensitive paths relevant to social engineering
-
-## Research context
-
-The broader research question behind this project is:
-
-> How can manipulated user actions expose or activate security-sensitive behavior in IoT companion applications?
-
-A future version could model a path such as:
-
-`Social-engineering trigger -> user action -> app state change -> sensitive API/data flow -> security impact`
-
-## Responsible use
-
-This project is intended for education, defensive research, and analysis of software you are authorized to inspect. It should not be used to access systems or data without permission.
-
-## License
-
-MIT
-
 ## Real Test Example
 
 The analyzer was tested on the open-source Android calculator APK:
@@ -130,3 +91,42 @@ These findings are **indicators only** and do not by themselves prove that the a
 A sample report from this test is included in the repository as:
 
 `sample-report.json`
+
+## Current Limitations
+
+This is intentionally a small research prototype.
+
+- Sensitive API detection is currently string-based.
+- Exported-component interpretation may depend on Android version and manifest behavior.
+- URLs may include benign SDK, analytics, documentation, or test endpoints.
+- Obfuscation can hide classes, methods, strings, and endpoints.
+- Findings require manual validation.
+
+## Possible Next Steps
+
+I plan to explore:
+
+1. direct method-reference analysis instead of only string matching
+2. permission-to-API mapping
+3. intent/deep-link extraction
+4. taint/data-flow analysis for sensitive sources and sinks
+5. comparison of IoT pairing and authentication workflows
+6. modeling user-triggered security-sensitive paths relevant to social engineering
+
+## Research Context
+
+The broader research question behind this project is:
+
+> How can manipulated user actions expose or activate security-sensitive behavior in IoT companion applications?
+
+A future version could model a path such as:
+
+`Social-engineering trigger -> user action -> app state change -> sensitive API/data flow -> security impact`
+
+## Responsible Use
+
+This project is intended for education, defensive research, and analysis of software you are authorized to inspect. It should not be used to access systems or data without permission.
+
+## License
+
+MIT

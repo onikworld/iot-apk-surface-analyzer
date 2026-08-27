@@ -18,7 +18,8 @@ import re
 from pathlib import Path
 from typing import Dict, List, Any
 
-from androguard.misc import AnalyzeAPK
+from androguard.core.apk import APK
+from androguard.core.dex import DEX
 
 ANDROID_NS = "{http://schemas.android.com/apk/res/android}"
 
@@ -162,7 +163,8 @@ def find_sensitive_api_indicators(strings: List[str]) -> Dict[str, List[str]]:
 
 
 def analyze(apk_path: Path) -> Dict[str, Any]:
-    apk, dex_objects, _analysis = AnalyzeAPK(str(apk_path))
+    apk = APK(str(apk_path))
+dex_objects = [DEX(raw_dex) for raw_dex in apk.get_all_dex()]
     manifest = apk.get_android_manifest_xml()
     strings = collect_dex_strings(dex_objects)
 

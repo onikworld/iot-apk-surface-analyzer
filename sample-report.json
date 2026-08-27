@@ -1,0 +1,99 @@
+{
+  "file": "com.vagujhelyigergely.calculatorm3_13.apk",
+  "package": "com.vagujhelyigergely.calculatorm3",
+  "app_name": "Calculator",
+  "version_name": "1.5.2",
+  "version_code": "13",
+  "permissions": [
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.FOREGROUND_SERVICE",
+    "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+    "android.permission.INTERNET",
+    "android.permission.POST_NOTIFICATIONS",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
+    "android.permission.WAKE_LOCK",
+    "com.vagujhelyigergely.calculatorm3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "exported_components": [
+    {
+      "type": "activity",
+      "name": "com.vagujhelyigergely.calculatorm3.MainActivity",
+      "exported": true,
+      "has_intent_filter": true,
+      "permission": null
+    },
+    {
+      "type": "activity",
+      "name": "net.openid.appauth.RedirectUriReceiverActivity",
+      "exported": true,
+      "has_intent_filter": true,
+      "permission": null
+    },
+    {
+      "type": "service",
+      "name": "androidx.work.impl.background.systemjob.SystemJobService",
+      "exported": true,
+      "has_intent_filter": false,
+      "permission": "android.permission.BIND_JOB_SERVICE"
+    },
+    {
+      "type": "receiver",
+      "name": "androidx.work.impl.diagnostics.DiagnosticsReceiver",
+      "exported": true,
+      "has_intent_filter": true,
+      "permission": "android.permission.DUMP"
+    },
+    {
+      "type": "receiver",
+      "name": "androidx.profileinstaller.ProfileInstallReceiver",
+      "exported": true,
+      "has_intent_filter": true,
+      "permission": "android.permission.DUMP"
+    }
+  ],
+  "endpoints": {
+    "urls": [
+      "https://android.asset/",
+      "https://developer.android.com/training/articles/direct-boot",
+      "https://github.com/google/gson/blob/main/Troubleshooting.md#",
+      "https://goo.gle/compose-feedback",
+      "https://huggingface.co/google/gemma-3n-E2B-it-litert-lm",
+      "https://huggingface.co/google/gemma-3n-E2B-it-litert-lm/resolve/main/gemma-3n-E2B-it-int4.litertlm",
+      "https://huggingface.co/google/gemma-3n-E4B-it-litert-lm",
+      "https://huggingface.co/google/gemma-3n-E4B-it-litert-lm/resolve/main/gemma-3n-E4B-it-int4.litertlm",
+      "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it.litertlm",
+      "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/gemma-4-E4B-it.litertlm",
+      "https://huggingface.co/oauth/authorize",
+      "https://huggingface.co/oauth/token",
+      "https://issuetracker.google.com/issues/241760537",
+      "https://issuetracker.google.com/issues/new?component=907884&template=1466542",
+      "https://youtrack.jetbrains.com/issue/KT-55980"
+    ],
+    "ip_endpoints": []
+  },
+  "sensitive_api_indicators": {
+    "Command execution": [
+      "java/lang/Runtime",
+      "exec"
+    ],
+    "Device identifiers": [
+      "getDeviceId",
+      "ANDROID_ID"
+    ],
+    "Location": [
+      "getLastKnownLocation"
+    ],
+    "Dynamic code / reflection": [
+      "java/lang/reflect"
+    ],
+    "External storage": [
+      "getExternalStorage",
+      "Environment"
+    ]
+  },
+  "notes": [
+    "This is a lightweight static triage tool, not a vulnerability scanner.",
+    "Exported status can depend on Android version and manifest semantics.",
+    "Sensitive API findings are string-based indicators and require manual validation."
+  ]
+}
